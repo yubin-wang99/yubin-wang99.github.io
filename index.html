@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yubin Wang - Home</title>
+    <style>
+        /* --- 기본 스타일 설정 --- */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 960px; /* 전체 너비 제한 */
+            margin: 0 auto;   /* 가운데 정렬 */
+            padding: 40px 20px;
+            background-color: #fff;
+            font-size: 16px;
+        }
+
+        /* 기본 링크 스타일 (메뉴 등 다른 링크용) */
+        a { color: #333; text-decoration: none; }
+        a:hover { text-decoration: underline; color: #0066cc; }
+
+        /* [수정됨] 호버 효과 제거용 공통 스타일 (연구실 & 교수님 이름용) */
+        a.no-deco-link:hover {
+            text-decoration: none; /* 밑줄 없음 */
+            color: #333;           /* 색상 검정 유지 */
+            cursor: pointer;       /* 손가락 모양 커서 유지 */
+        }
+
+        /* --- 헤더 영역 (이름 + 메뉴) --- */
+        header {
+            display: flex;             /* 가로 배치 */
+            justify-content: space-between; /* 양쪽 끝으로 배치 */
+            align-items: flex-end;     /* 텍스트 아랫부분 라인 맞춤 */
+            border-bottom: 1px solid #eee; /* 하단 회색 줄 */
+            padding-bottom: 15px;      /* 줄과 내용 사이 간격 */
+            margin-bottom: 40px;       /* 헤더와 본문 사이 간격 */
+        }
+
+        .header-left h1 {
+            font-size: 2.2rem;
+            margin: 0 0 5px 0; /* 아래 여백 살짝 */
+            color: #222;
+        }
+
+        .header-left p {
+            margin: 0;
+            color: #666;
+            font-size: 1rem;
+            font-weight: 400;
+        }
+
+        .header-nav {
+            font-size: 1rem;
+        }
+
+        .header-nav a {
+            margin-left: 20px; /* 메뉴 사이 간격 */
+            color: #555;
+            font-weight: 500;
+        }
+
+        /* --- 공통 섹션 스타일 --- */
+        section {
+            padding-bottom: 40px;
+            margin-bottom: 40px;
+            border-bottom: 1px solid #eee;
+            scroll-margin-top: 20px;
+        }
+        h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: #222;
+        }
+
+        /* --- About Me (텍스트 왼쪽, 사진 오른쪽) --- */
+        .about-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 40px; 
+        }
+
+        .about-text {
+            flex: 1; 
+        }
+
+        .about-photo {
+            flex-shrink: 0; 
+            width: 200px;   
+            max-width: 30%;
+            margin-top: 15px;
+        }
+
+        .about-photo img {
+            width: 100%;
+            height: 250px;      
+            object-fit: cover;  
+            object-position: top; 
+            border-radius: 8px; 
+        }
+
+        /* --- 이메일 복사 기능 스타일 --- */
+        .email-clickable {
+            cursor: pointer;      
+            color: #333;       
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: none; 
+        }
+        .email-clickable:hover {
+            background-color: #f0f8ff; 
+        }
+        .copy-msg {
+            color: green;
+            font-size: 0.8em;
+            margin-left: 8px;
+            display: none;       
+            font-weight: bold;
+        }
+
+        /* --- 상세 항목 (Education, Pubs 등) --- */
+        .section-item {
+            margin-bottom: 25px;
+        }
+        .title {
+            font-weight: bold;
+            font-size: 1.05em;
+            display: block;
+        }
+        .date {
+            color: #777;
+            font-size: 0.9rem;
+            display: block;
+            margin-bottom: 4px;
+        }
+        
+        .contact-links {
+            margin-top: 40px;
+            font-weight: 500;
+        }
+
+        /* 모바일 대응 */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column; 
+                align-items: flex-start;
+                gap: 15px;
+            }
+            .header-nav a {
+                margin-left: 0;
+                margin-right: 15px;
+            }
+            .about-container {
+                flex-direction: column-reverse; 
+            }
+            .about-photo {
+                width: 100%;
+                max-width: 300px;
+                margin: 0 auto 20px auto; 
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-left">
+            <h1>Yubin Wang</h1>
+            <p>Majoring EE @ Korea University</p>
+        </div>
+        <nav class="header-nav">
+            <a href="#about">About Me</a>
+            <a href="#education">Education</a>
+            <a href="#publication">Publications</a>
+            <a href="#experience">Experience</a>
+        </nav>
+    </header>
+
+    <section id="about">
+        <h2>About Me</h2>
+        <div class="about-container">
+            <div class="about-text">
+                <p>
+                    I am a M.S/Ph.D. student in the 
+                    <a href="https://comsys-lab.github.io/index.html" target="_blank" class="no-deco-link"><strong>Computer Architecture and System Software Laboratory</strong></a>
+                    <br>at Korea University, under the guidance of 
+                    <a href="https://yunho-oh.github.io/" target="_blank" class="no-deco-link"><strong>Prof. Yunho Oh</strong></a>.
+                </p>
+                <p>
+                    My research interests lie in GPU microarchitecture and hardware-software co-design for AI systems.
+                </p>
+                
+                <div class="contact-links">
+                    <strong>Email:</strong> 
+                    <span class="email-clickable" onclick="copyToClipboard('wyb1021@naver.com')" title="Click to copy email">
+                        wyb1021@naver.com
+                    </span>
+                    <span id="copy-success-msg" class="copy-msg">Copied!</span>
+                </div>
+            </div>
+
+            <div class="about-photo">
+                <img src="Yubin_Wang2_2.jpg" alt="Yubin Wang">
+            </div>
+        </div>
+    </section>
+
+    <section id="education">
+        <h2>Education</h2>
+        
+        <div class="section-item">
+            <span class="title">M.S/Ph.D. in Department of Electrical Engineering, Korea University</span>
+            <span class="date">Mar. 2026 ~ Current</span>
+            Advisor: <a href="https://yunho-oh.github.io/" target="_blank" class="no-deco-link">Prof. Yunho Oh</a>
+        </div>
+
+        <div class="section-item">
+            <span class="title">B.S. in Department of Electrical and Computer Engineering, University of Seoul</span>
+            <span class="date">Mar. 2020 ~ Feb. 2026</span>
+        </div>
+    </section>
+
+    <section id="publication">
+        <h2>Publications</h2>
+        <div class="section-item" style="color: #888; font-style: italic;">
+            <p>To be updated.</p>
+        </div>
+    </section>
+
+    <section id="experience">
+        <h2>Experience</h2>
+
+        <div class="section-item">
+            <span class="title">Undergraduate Research Intern at ComSys (<a href="https://yunho-oh.github.io/" target="_blank" class="no-deco-link">Prof. Yunho Oh</a>), Korea University</span>
+            <span class="date">Aug. 2025 ~ Feb. 2026</span>
+            GPU Microarchitecture<br>
+            Numeric Formats for Deep Learning
+        </div>
+    </section>
+
+    <section id="skills">
+        <h2>Skills</h2>
+        <p>Python, C++</p>
+    </section>
+
+
+    <script>
+        function copyToClipboard(text) {
+            navigator.clipboard.writeText(text).then(function() {
+                var msg = document.getElementById("copy-success-msg");
+                msg.style.display = "inline"; 
+                setTimeout(function() {
+                    msg.style.display = "none";
+                }, 2000);
+            }, function(err) {
+                console.error('Could not copy text: ', err);
+                alert("Failed to copy email.");
+            });
+        }
+    </script>
+
+</body>
+</html>
