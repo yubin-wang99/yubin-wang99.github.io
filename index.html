@@ -79,12 +79,14 @@
         .about-container {
             display: flex;
             justify-content: space-between;
-            align-items: flex-start;
+            align-items: stretch;
             gap: 40px; 
         }
 
         .about-text {
-            flex: 1; 
+            flex: 1;
+            display: flex;          /* <-- 추가 */
+            flex-direction: column; /* <-- 추가 */
         }
 
         .about-photo {
@@ -136,9 +138,9 @@
             display: block;
             margin-bottom: 4px;
         }
-        
         .contact-links {
-            margin-top: 40px;
+            margin-top: auto;    /* <-- 수정 (핵심!) */
+            padding-top: 20px;   /* <-- 텍스트가 너무 길 때를 대비해 최소 간격 확보 */
             font-weight: 500;
         }
 
